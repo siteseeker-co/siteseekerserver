@@ -1,0 +1,43 @@
+{
+  "name": "siteseekerserver",
+  "version": "1.0.0",
+  "dependencies": {
+    "@mikro-orm/core": "^5.0.5",
+    "@mikro-orm/postgresql": "^5.0.5",
+    "cors": "^2.8.5",
+    "debug": "^4.3.3",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15",
+    "uuid": "^8.3.2"
+  },
+  "scripts": {
+    "build": "tsc --build ./",
+    "fix.lint": "eslint --cache --fix --ext ts,js,tsx src",
+    "organize": "node node_modules/jscodeshift/bin/jscodeshift.js packages  --extensions=tsx,ts --parser=tsx -t node_modules/siteseekerlib/tools/organize.ts",
+    "orm": "mikro-orm",
+    "start": "nodemon src/index.ts",
+    "test.deps": "yarn depcheck --ignores=depcheck,typescript, ts-node",
+    "test.lint": "eslint --cache --ext ts,js,tsx src",
+    "test.types": "yarn tsc"
+  },
+  "devDependencies": {
+    "siteseekerlib": "git+https://github.com/siteseeker-co/siteseekerlib.git#v1.1.0",
+    "@mikro-orm/cli": "^5.0.5",
+    "@types/cors": "^2.8.17",
+    "@types/debug": "^4.1.12",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.4",
+    "@types/uuid": "^9.0.7",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./mikroorm.ts"
+    ]
+  }
+}
