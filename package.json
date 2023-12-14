@@ -22,7 +22,6 @@
     "test.types": "yarn tsc"
   },
   "devDependencies": {
-    "siteseekerlib": "git+https://github.com/siteseeker-co/siteseekerlib.git#v1.1.0",
     "@mikro-orm/cli": "^5.0.5",
     "@types/cors": "^2.8.17",
     "@types/debug": "^4.1.12",
@@ -31,8 +30,9 @@
     "@types/uuid": "^9.0.7",
     "eslint": "^8.55.0",
     "prettier": "^3.1.0",
-    "typescript": "^5.3.3",
-    "ts-node": "^10.9.2"
+    "siteseekerlib": "git+https://github.com/siteseeker-co/siteseekerlib.git#v1.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   },
   "mikro-orm": {
     "useTsNode": true,
